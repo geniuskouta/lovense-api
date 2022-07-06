@@ -7,10 +7,13 @@ export enum Model {
   WAVE = 'wave',
   FIREWORKS = 'fireworks',
   EARTHQUAKE = 'earthquake',
-  STOP = 'stop'
 };
 
-export const execute = async (userid: string, pattern: Model, duration: number) => {
+type Options = {
+  toy?: string;
+}
+
+export const execute = async (userid: string, pattern: Model, duration: number, options: Options) => {
   return HttpClient.post(url, {
     token: token,
     uid: userid,
