@@ -13,13 +13,14 @@ type Options = {
   toy?: string;
 }
 
-export const execute = async (userid: string, pattern: Model, duration: number, options: Options) => {
+export const execute = async (userId: string, pattern: Model, duration: number, options?: Options) => {
   return HttpClient.post(url, {
     token: token,
-    uid: userid,
+    uid: userId,
     command: "Preset", 
     name: pattern,
     timeSec: duration,
-    apiVer: 2
+    apiVer: 2,
+    ...options
   });
 }

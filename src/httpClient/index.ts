@@ -6,6 +6,7 @@ class HttpClient {
   }
 
   static async post<T, U>(url: string, payload: T): Promise<U> {
+    console.log(payload)
     return client.post(url, payload);
   }
 }

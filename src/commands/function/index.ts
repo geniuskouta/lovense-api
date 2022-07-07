@@ -21,10 +21,10 @@ type Options = {
   toy?: string;
 }
 
-export const execute = async (userid: string, action: Model | InstructionModel[], duration: number, options?: Options) => {
+export const execute = async (userId: string, action: Model | InstructionModel[], duration: number, options?: Options) => {
   return HttpClient.post(url, {
     token: token,
-    uid: userid,
+    uid: userId,
     command: "Function", 
     action: parseAction(action),
     timeSec: duration,
